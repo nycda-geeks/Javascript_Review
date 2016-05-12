@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        /* function that returns the sum of three parameters */
+        function sum(a, b, c) {
+            return (a + b + c)
+        }
+        console.log(sum(10, 22, 43))
+        console.log("Should be: 75")
+
+        /* function that returns the last character in a string */
+        function lastchar(string) {
+            var n = string.length
+            return string.charAt(n - 1)
+        }
+        console.log(lastchar("Hello"))
+        console.log("Should be: o")
+
+        /* function that returns the cube of a paramater */
+
+        function cubus(num) {
+            return Math.pow(num, 3)
+        }
+        console.log(cubus(5))
+        console.log("Should be: 125")
+
+        /* function that reverses a string it */
+
+        var word = ""
+
+        function reverse(string) {
+            for (var i = string.length - 1; i >= 0; i--)
+                word += string[i]
+        }
+        reverse("Hello")
+        console.log(word)
+        console.log("Should be: olleH")
+
+        /* function that takes in two arrays of the same length as parameters. From those two arrays, create, then return an object which contains the elements of the first array as keys, and the elements of the second array as values */
+
+        var array1 = ["a", "b", "c"]
+        var array2 = ["1", "2", "3"]
+
+
+        function ReturnObject(string, num) {
+            var result = {};
+            for (var i = 0; i < string.length; i++)
+                result[string[i]] = num[i];
+            return result;
+        }
+        console.log(ReturnObject(array1, array2))
+        console.log("Should be: Object {a:1, b:2, c:3}")
+
+
+        /* Given an object with keys and values, create two arrays: one which contains the object's keys, and one which contains the object's values. Wrap this into a function which takes in one object that contains keys and values, and returns a different object that contains two keys. The first key should be named "keys" and will have the first array as a value. The second key should be named "values" and will have the second array as a value */
+
+        var object = {
+            "a": "1",
+            "b": "2",
+            "c": "3"
+        }
+
+        function keyValues(object) {
+            var values = []
+            var keys = [];
+            for (var key in object) {
+                keys.push(key)
+                values.push(object[key]);
+            }
+            console.log(keys, values)
+        }
+        keyValues(object)
+        console.log("Should be: [ a, b, c] [1, 2, 3]")
+    </script>
